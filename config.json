@@ -1,0 +1,9 @@
+{
+  "targetLanguage": "English",
+  "minimumIntentScore": 0.05,
+  "contextLifespan": 2,
+  "requiredRecognizersOnly": false,
+  "removeContextOnFallback": false,
+  "maxUserIdleInterval": 86400.0,
+  "removeIdleUsers": true
+}

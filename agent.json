@@ -1,0 +1,35 @@
+{
+  "projectName": "ProgBuilder",
+  "projectNote": null,
+  "composerVersion": "6.0.0",
+  "dialogs": [
+    {
+      "name": "Code Building",
+      "domain": null,
+      "intents": [],
+      "quickIntents": []
+    }
+  ],
+  "entities": [
+    {
+      "entityType": "ProgBuilder",
+      "recognizerType": "Entry",
+      "canFuzzyMatch": false,
+      "regularExpression": null,
+      "entries": []
+    }
+  ],
+  "traits": [
+    {
+      "name": "Willing to Code",
+      "expressions": []
+    }
+  ],
+  "userSettings": [],
+  "botSettings": [
+    {
+      "name": "Automate Response",
+      "values": []
+    }
+  ]
+}

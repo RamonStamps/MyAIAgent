@@ -1,0 +1,75 @@
+{
+  "name": "progbuilder",
+  "displayName": "ProgBuilder: AI Agent",
+  "publisher": "Ramon",
+  "description": "An AI Agent dedicated to helping developers manage and build projects using Ollama.",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ramon/ProgBuilder.git"
+  },
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Machine Learning",
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:progbuilder.start",
+    "onCommand:progbuilder.buildModel",
+    "onCommand:progbuilder.fixError",
+    "onView:progbuilder.chatView"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "progbuilder.start",
+        "title": "ProgBuilder: Start Agent"
+      },
+      {
+        "command": "progbuilder.buildModel",
+        "title": "ProgBuilder: Build Integrated User Model"
+      },
+      {
+        "command": "progbuilder.fixError",
+        "title": "ProgBuilder: Fix Selected Error"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "progbuilder-explorer",
+          "title": "ProgBuilder",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "progbuilder-explorer": [
+        {
+          "type": "webview",
+          "id": "progbuilder.chatView",
+          "name": "ProgBuilder Chat",
+          "icon": "media/icon.svg"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "esbuild ./src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node",
+    "esbuild-watch": "esbuild ./src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node --watch",
+    "test": "npm run compile && node ./dist/extension.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.80.0",
+    "@types/node": "18.x",
+    "typescript": "^5.1.3",
+    "esbuild": "^0.18.11"
+  },
+  "dependencies": {}
+}
